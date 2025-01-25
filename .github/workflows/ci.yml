@@ -1,8 +1,12 @@
 name: CI
 
 on:
-  push:
-    branches: [master]
+  pull_request:
+    branches:
+      - master
+      - staging
+      - develop
+
 jobs:
   run_tests:
     runs-on: ubuntu-latest
