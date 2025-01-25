@@ -1,0 +1,80 @@
+service: aws-serverless-typescript-api
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: ${opt:stage, "dev"}
+  region: us-east-1
+  environment:
+    TABLE_NAME: ${file(./serverless.env.yml):${self:provider.stage}.table}
+
+  iamRoleStatements:
+    - Effect: 'Allow'
+      Action:
+        - 'dynamodb:BatchWriteItem'
+        - 'dynamodb:BatchGetItem'
+        - 'dynamodb:ConditionCheckItem'
+        - 'dynamodb:GetItem'
+        - 'dynamodb:PutItem'
+        - 'dynamodb:Query'
+        - 'dynamodb:UpdateItem'
+        - 'dynamodb:Scan'
+        - 'dynamodb:DeleteItem'
+      Resource: 'arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${file(./serverless.env.yml):${self:provider.stage}.table}'
+
+plugins:
+  - serverless-offline
+  - serverless-plugin-typescript
+
+package:
+  patterns:
+    - '!jest.config.ts'
+    - '!tests/**'
+    - '!.github/**'
+    - '!Insomnia_2023-09-03.json'
+    - '!archtiecture-api-movie.png'
+    - '!build/tests/**'
+    - '!build/tests/jest.config.js'
+    - '!build/tests/jest.config.js.map'
+
+functions:
+  createUser:
+    handler: functions/User.create
+    timeout: 10
+    events:
+      - httpApi:
+          path: /users
+          method: post
+
+  findByIdUser:
+    handler: functions/User.findById
+    timeout: 10
+    events:
+      - httpApi:
+          path: /users/{id}
+          method: get
+
+  removeUser:
+    handler: functions/User.remove
+    timeout: 10
+    events:
+      - httpApi:
+          path: /users/{id}
+          method: delete
+
+  updateUser:
+    handler: functions/User.update
+    timeout: 10
+    events:
+      - httpApi:
+          path: /users/{id}
+          method: put
+
+  findAllUser:
+    handler: functions/User.findAll
+    timeout: 10
+    events:
+      - httpApi:
+          path: /users
+          method: get
