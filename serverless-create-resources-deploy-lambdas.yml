@@ -1,4 +1,4 @@
-service: aws-serverless-typescript-api
+service: challenge-ld-api
 frameworkVersion: '3'
 
 provider:

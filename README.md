@@ -12,6 +12,7 @@
 ## Instructions
 
 - Clone repository
+- Setup aws-cli and create profile named **default**
 - Execute command **npm install** to install all modules project needs
 - Create **serverless.env.yml** file based **serverless.env.example.yml** file.
 - Execute command **npm run deploy-to-create-resource:production** use this command to deploy your application first time in prodution environment.
