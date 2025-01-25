@@ -1,7 +1,3 @@
-## About
-
-I created this project to study about how to model Dynamodb using single table design
-
 ## Technolgies
 
 - Nodejs
