@@ -28,3 +28,27 @@ I created this project to study about how to model Dynamodb using single table d
 ## Extra
 
 - Import **Insomnia_2025-01-25.json** file with routes in Insominia to test.
+- The **serverless.env.yml** file structure:
+
+```
+dev:
+  table: 'table_name_here'
+staging:
+  table: 'table_name_here'
+production:
+  table: 'table_name_here'
+
+```
+
+- The project structure:
+
+```
+--- configs -> The project's configs
+--- entities -> The code responsible to represent the Dynamodb table
+--- functions -> The lambda function code
+--- repositories -> The code reponsible to execution actions like: queries, save and delete data.
+--- services -> the business logic of application here.
+--- types    -> The types I using on application.
+--- utils    -> The code used to support the other layers.
+--- tests    -> The tests code
+```
