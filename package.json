@@ -26,10 +26,10 @@
     "typescript": "^5.2.2"
   },
   "scripts": {
-    "deploy-to-create-resource:production": "sls deploy --config ./serverless-create-resources-deploy-lambdas.yml --stage production --aws-profile tiago",
-    "deploy-to-create-resource:staging": "sls deploy --config ./serverless-create-resources-deploy-lambdas.yml --stage staging --aws-profile tiago",
-    "deploy:production": "sls deploy --config ./serverless-deploy-lambdas.yml --stage production --aws-profile tiago",
-    "deploy:staging": "sls deploy --config ./serverless-deploy-lambdas.yml --stage staging --aws-profile tiago",
+    "deploy-to-create-resource:production": "sls deploy --config ./serverless-create-resources-deploy-lambdas.yml --stage production --aws-profile default",
+    "deploy-to-create-resource:staging": "sls deploy --config ./serverless-create-resources-deploy-lambdas.yml --stage staging --aws-profile default",
+    "deploy:production": "sls deploy --config ./serverless-deploy-lambdas.yml --stage production --aws-profile default",
+    "deploy:staging": "sls deploy --config ./serverless-deploy-lambdas.yml --stage staging --aws-profile default",
     "start:dev": "sls offline start --config serverless-deploy-lambdas-offline.yml",
     "test": "jest ./tests/**/**/*.spec.ts",
     "lint": "./node_modules/.bin/eslint ./ --fix"
