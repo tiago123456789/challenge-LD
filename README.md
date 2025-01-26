@@ -19,7 +19,7 @@
 - Execute command **npm run deploy-to-create-resource:staging** use this command to deploy your application first time in staging environment.
 - Execute command **npm run deploy:production** use this command when is your second time to deploy your application in production environment.
 - Execute command **npm run deploy:staging** use this command when is your second time to deploy your application in staging environment.
-- Execute command **npm run start:dev** to run lambda function locally. WARN: you need deploy application one time to create Dynamodb table.
+- Execute command **npm run start:dev** to run lambda function locally. PS: when you start the application the plugin **serverless-dynamodb** will create the dynamodb table locally for you.
 - Execute command **npm run test** to run unit tests the api.
 
 ## Extra
