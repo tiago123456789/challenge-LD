@@ -50,4 +50,6 @@ production:
 --- tests    -> The tests code
 ```
 
-- I blocked send code to branchs: staging and master, so that way you can protected against send code no ready to staging or production(branch master), you need open PULL REQUEST
+- I blocked send code to branchs: staging and master, so that way you can protected against send code no ready to staging or production(branch master), you need open PULL REQUEST.
+- I setup the Github actinos CI(run the tests) pipeline to run when open PR, so to merge
+  the PR all the tests needs to pass and someone needs to review the PR.
