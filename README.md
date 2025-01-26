@@ -49,3 +49,5 @@ production:
 --- utils    -> The code used to support the other layers.
 --- tests    -> The tests code
 ```
+
+- I blocked send code to branchs: staging and master, so that way you can protected against send code no ready to staging or production(branch master), you need open PULL REQUEST
